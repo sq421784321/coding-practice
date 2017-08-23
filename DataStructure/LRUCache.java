@@ -31,7 +31,6 @@ class LRUCache {
     private Node head;
     private Node tail;
     
-    
     public LRUCache(int capacity) {
         this.capacity = capacity;
         map = new HashMap<>();
@@ -42,7 +41,6 @@ class LRUCache {
         if(node == null) {
             return -1;
         }
-        
         remove(node);
         append(node);
         return node.val;
