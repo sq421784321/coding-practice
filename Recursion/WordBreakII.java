@@ -1,0 +1,30 @@
+class Solution {
+    public List<String> wordBreak(String s, List<String> wordDict) {
+        return helper(s, wordDict, new HashMap<String, List<String>>());
+    }
+    
+    private List<String> helper(String s, List<String> wordDict, Map<String, List<String>> map) {
+        if(map.containsKey(s)) {
+            return map.get(s);
+        }
+        
+        List<String> cur = new ArrayList<>();
+        if(s.length() == 0) {
+            cur.add("");
+            return cur;
+        }
+        
+        for(String word : wordDict) {
+            if(s.startsWith(word)) {
+                List<String> sublist = helper(s.substring(word.length()), wordDict, map);
+                
+                for(String sub : sublist) {
+                    cur.add(word + (sub.isEmpty() ? "" : " ") + sub);
+                }
+            }
+        }
+        
+        map.put(s, cur);
+        return cur;
+    }
+}
