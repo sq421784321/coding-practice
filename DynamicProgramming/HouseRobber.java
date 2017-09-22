@@ -1,5 +1,5 @@
 /*
-You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint <br />stopping you from robbing each of them is that adjacent houses have security system connected and it will automatically contact the <br />police if two adjacent houses were broken into on the same night.
+You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint /nstopping you from robbing each of them is that adjacent houses have security system connected and it will automatically contact the /npolice if two adjacent houses were broken into on the same night.
 
 Given a list of non-negative integers representing the amount of money of each house, determine the maximum amount of money you can rob <br />tonight without alerting the police.
 */
