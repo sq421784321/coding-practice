@@ -1,4 +1,6 @@
 class Solution {
+	// Method 2: DP. One Pass.
+	// LeetCode Runtime: 1ms. Extremely fast.
     public int numDecodings(String s) {
 		// dp[i] : number of ways to decode s[i, n - 1]
 		// dp[i] = {dp[i + 1]} + {dp[i + 2]};
@@ -26,7 +28,7 @@ class Solution {
         // return helper(s, 0);
     }
     
-	// Method 1 : DFS
+	// Method 1: DFS
 	// LeetCode Runtime: 554ms. Very very very slow...
     private int helper(String s, int index) {
         if (index == s.length()) {
