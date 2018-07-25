@@ -1,5 +1,5 @@
 # Coding Practice For Interview
 
-Record some of my code solutions to leetcode problems.
+:pencil2: Record some of my code solutions  to leetcode problems.
 
-Also, please refer my [GitBook](https://mabuxi.gitbook.io/mabuxi/ "My Coding Summary").
+:book: You can also refer my [GitBook](https://mabuxi.gitbook.io/mabuxi/ "My Coding Summary").
