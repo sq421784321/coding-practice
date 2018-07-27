@@ -63,8 +63,8 @@ class Solution {
         if (node == null) return null;
         
         MyNode myNode = new MyNode(node.val);
-        myNode.left = build(node.left, myNode, target, array);
-        myNode.right = build(node.right, myNode, target, array);
+        myNode.left = rebuild(node.left, myNode, target, array);
+        myNode.right = rebuild(node.right, myNode, target, array);
         myNode.parent = parent;
         
         if (target.val == node.val) {
