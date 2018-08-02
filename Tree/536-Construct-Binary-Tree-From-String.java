@@ -8,6 +8,7 @@
  * }
  */
 class Solution {
+	// Method 1 : iteretive
     public TreeNode str2tree(String s) {
         s = "(" + s + ")";
         Deque<TreeNode> stack = new LinkedList<>();
@@ -59,4 +60,37 @@ class Solution {
         }
         return null;
     }
+	
+	// Method 2 : recursion
+	/*
+	public TreeNode str2tree(String s) {
+        if (s == null || s.length() == 0) return null;
+		
+		// Get the node val
+        int firstParen = s.indexOf("(");
+        Integer val = firstParen == -1 ? Integer.parseInt(s) : Integer.parseInt(s.substring(0, firstParen));
+        TreeNode node = new TreeNode(val);
+        if (firstParen == -1) return node;
+        
+		// Get the leftChild boundary
+        int count = 0;
+        int start = firstParen + 1;
+        int end = s.length();
+        for (int i = firstParen; i < s.length(); i++) {
+            if (s.charAt(i) == '(') count++;
+            if (s.charAt(i) == ')') count--;
+            if (count == 0) {
+                end = i;
+                break;
+            }
+        }
+		// Recursive rule (left child)
+        node.left = str2tree(s.substring(start, end));
+        // Recursive rule (right child if exists)
+		if (end + 2 < s.length()) {
+            node.right = str2tree(s.substring(end + 2, s.length() - 1));
+        }
+        return node;
+    }
+	*/
 }
