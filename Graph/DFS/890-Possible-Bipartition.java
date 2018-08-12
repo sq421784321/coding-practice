@@ -1,4 +1,12 @@
 class Solution {
+	/*
+		Method 1: DFS
+		
+		First, build the graph using Adjacency List.
+		Then, create an array to keep track of the group number of each node.
+		Last, do a dfs to each node to validate the partiton rules.
+	*/
+	
     public boolean possibleBipartition(int N, int[][] dislikes) {
         List<List<Integer>> graph = new ArrayList<>();
         
@@ -14,7 +22,6 @@ class Solution {
         }
         
         int[] array = new int[N];
-        boolean[] visited = new boolean[N];
         
         for (int i = 0; i < N; i++) {
             if (array[i] == 0) {
@@ -26,19 +33,19 @@ class Solution {
         return true;
     }
     
-    private boolean dfs(int[] array, int index, int cur, List<List<Integer>> graph) {
-        if (array[index] == cur) {
+    private boolean dfs(int[] array, int index, int group, List<List<Integer>> graph) {
+        if (array[index] == group) {
             return true;
         }
         
-        if (array[index] != 0 && array[index] != cur) {
+        if (array[index] != 0 && array[index] != group) {
             return false;
         }
         
-        array[index] = cur;
+        array[index] = group;
         List<Integer> dislikes = graph.get(index);
         for (int d : dislikes) {
-            if (cur == 1) {
+            if (group == 1) {
                 if (!dfs(array, d, 2, graph)) {
                     return false;
                 }
