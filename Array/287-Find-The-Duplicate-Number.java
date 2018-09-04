@@ -26,4 +26,36 @@ class Solution {
         
         return slow;
     }
+	
+	
+	/*
+		Method 2: Binary Search.
+		
+		Binary search to search value range.
+	*/
+	
+	/*
+    public int findDuplicate(int[] nums) {
+        int left = 1, right = nums.length - 1;
+        
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+            int smaller = 0;
+            
+            for (int i = 0; i < nums.length; i++) {
+                if (nums[i] <= mid) {
+                    smaller += 1;
+                }
+            }
+            
+            if (smaller > mid) {
+                right = mid;
+            } else {
+                left = mid + 1;
+            }
+        }
+        
+        return left;
+    }
+	*/
 }
